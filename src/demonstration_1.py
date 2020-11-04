@@ -28,15 +28,27 @@ class LinkedListNode():
         self.value = value
         self.next  = None
 
-def delete_node(node_to_delete):
-    # Your code here
-
+def delete_node(head, index):
+    # start traversing our linked list from the head
+    # until we get to the node right before the one
+    # we're going to delete
+    current = head
+    # keep a counter to know how many linked list nodes we've traversed
+    counter = 1
+    
+    # iterate until counter == index -1
+    while counter != index - 1:
+        current = current.next
+        counter += 1
 
 x = LinkedListNode('X')
 y = LinkedListNode('Y')
 z = LinkedListNode('Z')
+a = LinkedListNode("A")
 
 x.next = y
 y.next = z
+z.next = a
+
 
 delete_node(y)
